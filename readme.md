@@ -19,3 +19,5 @@ A collection of Docker containers for cybersecurity tools.
 ```bash
 git clone https://github.com/swayanbasu04/securecyber-lab.git
 cd securecyber-lab
+docker-compose up -d
+
