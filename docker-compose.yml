@@ -1,0 +1,27 @@
+version: '3'
+services:
+  kali:
+    build:
+      context: .
+      dockerfile: Dockerfile.kali
+    networks:
+      - cybersec-lab
+  
+  spiderfoot:
+    build:
+      context: .
+      dockerfile: Dockerfile.spiderfoot
+    ports:
+      - "5001:5001"
+  
+  metasploit:
+    image: metasploitframework/metasploit-framework
+
+  elk:
+    image: sebp/elk
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+
+networks:
+  cybersec-lab:

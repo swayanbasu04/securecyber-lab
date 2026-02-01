@@ -1,0 +1,10 @@
+FROM python:3
+
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
+WORKDIR /opt/spiderfoot
+RUN pip install -r requirements.txt
+
+EXPOSE 5001
+
+CMD ["python", "sf.py"]
